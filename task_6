@@ -1,0 +1,54 @@
+package lab2;
+import java.util.Scanner;
+
+public class task_6 {
+    public static void main(String[] args) {
+        Scanner myObj = new Scanner(System.in);
+        char a;
+        do {
+            System.out.println("Enter username: ");
+            String name = myObj.next();
+            System.out.println("Enter password: ");
+            String pass = myObj.next();
+            if(name.equals("Rumaesa") && pass.equals("xyz123")){
+                System.out.println("Login Successful! Welcome, "+ name);
+                System.out.println("***************************");
+                System.out.println("Welcome to Bank of Pakistan");
+                System.out.println("***************************");
+                System.out.println("1. Deposit Money");
+                System.out.println("2. Withdraw Amount");
+                System.out.println("3. Account Status");
+                System.out.println("***************************");
+                System.out.print("Select your choice: ");
+                int choice = myObj.nextInt();
+                int balance = 0, amount;
+                switch (choice) {
+                    case 1:
+                        System.out.println("Enter the amount to deposit: ");
+                        amount = myObj.nextInt();
+                        balance = balance + amount;
+                        System.out.println("Amount deposited successfully. New balance: " + balance);
+                        break;
+                    case 2:
+                        System.out.println("Enter the amount to withdraw: ");
+                        amount = myObj.nextInt();
+                        balance = balance - amount;
+                        System.out.println("Amount withdrawn successfully. New balance: " + balance);
+                        break;
+                    case 3:
+                        System.out.println("Account status:");
+                        System.out.println("Username: " + name);
+                        System.out.println("Balance: " + balance);
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+            }else{
+                System.out.println("Incorrect Login Information");
+            }
+            System.out.println("Continue (y/n): ");
+            a = myObj.next().charAt(0);
+        }while (a == 'y');
+
+    }
+}
