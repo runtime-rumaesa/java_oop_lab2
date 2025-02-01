@@ -1,0 +1,27 @@
+package lab2;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class task_7 {
+    public static void main(String[] args) {
+        char a;
+        do{
+            Scanner myObj = new Scanner(System.in);
+            ArrayList<String> List = new ArrayList<>();
+            System.out.println("Enter the title of 5 books being borrowed:");
+            for(int i = 0; i < 5; i++){
+                System.out.println("Book "+ (i+1) + ":");
+                List.add(myObj.next());
+            }
+            System.out.println("Borrowed Books:");
+            int l = 1;
+            for (String n: List){
+                System.out.println(l + n);
+                l++;
+            }
+            System.out.println("Fine per day (Overdue): $2.00");
+            System.out.println("Continue (y/n): ");
+            a = myObj.next().charAt(0);
+        }while (a == 'y');
+    }
+}
