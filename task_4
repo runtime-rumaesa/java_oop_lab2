@@ -1,0 +1,21 @@
+package lab_2;
+import java.util.Scanner;
+
+public class task_4 {
+    public static void main(String[] args) {
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("Enter integers between 1 and 100 (enter -1 to stop): ");
+        int even = 0, odd = 0;
+        int num = myObj.nextInt();
+        while(num != -1){
+            if(num%2 == 0){
+                even = even + num;
+            }else{
+                odd = odd + num;
+            }
+            num = myObj.nextInt();
+        }
+        System.out.println("Sum of even numbers: " + even);
+        System.out.println("Sum of odd numbers: " + odd);
+    }
+}
