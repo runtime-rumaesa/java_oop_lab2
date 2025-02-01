@@ -1,0 +1,62 @@
+Skip to main content
+Google Classroom
+Classroom
+OOP - Lab
+BSE-2A
+Lab-02 Submission (All Tasks)Lab-02 Submission (All Tasks)
+Lab-02 Submission (All Tasks)
+Muhammad Nadeem
+•
+Jan 27 (Edited Jan 28)
+100 points
+Due Tomorrow, 11:59 PM
+Class comments
+Your work
+Assigned
+
+task_1.txt
+Text
+
+task_2.txt
+Text
+
+task_3.txt
+Text
+
+task_4.txt
+Text
+
+task_5.txt
+Text
+
+task_8.txt
+Text
+Private comments
+package lab_2;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class task_2 {
+    public static void main(String[] args) {
+        Scanner myObj = new Scanner(System.in);
+        ArrayList<String> todoList = new ArrayList<>();
+        todoList.add("Buy groceries");
+        todoList.add("Iron clothes");
+        todoList.add("Clean room");
+        todoList.add("Call Ammi");
+        todoList.add("Prepare Dinner");
+
+        System.out.println("To do List: ");
+        for (String n : todoList){
+            System.out.println(n);
+        }
+        todoList.remove("Iron clothes");
+        System.out.println("");
+        System.out.println("Updated list after removing 'Iron clothes'");
+        for (String n : todoList){
+            System.out.println(n);
+        }
+    }
+}
+task_2.txt
+Displaying task_2.txt.
