@@ -1,0 +1,44 @@
+package lab_2;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class task_8 {
+    public static void main(String[] args) {
+        Scanner myObj = new Scanner(System.in);
+        char a;
+        do {
+            System.out.println("Enter items (first item's name and then price): ");
+            ArrayList<String> List = new ArrayList<>();
+            int[] price = new int[5];
+            int subTotal = 0;
+            for (int i = 0; i < 5; i++) {
+                List.add(myObj.next());
+                price[i] = myObj.nextInt();
+                subTotal = subTotal + price[i];
+            }
+            double dis;
+            if (subTotal > 500) {
+                dis = 10;
+            } else {
+                dis = 5;
+            }
+            double disc = (subTotal * dis) / 100;
+            double total = subTotal - disc;
+
+            System.out.println("Itemized List: ");
+            int l = 0;
+            for (String n : List) {
+                System.out.println(n + price[l]);
+                l++;
+            }
+
+            System.out.println("SubTotal: " + subTotal);
+            System.out.println("Discount Percent: " + dis);
+            System.out.println("Discount Amount: " + disc);
+
+            System.out.println("Total after discount: " + total);
+            System.out.println("Continue (y/n): ");
+            a = myObj.next().charAt(0);
+        } while (a == 'y');
+    }
+}
