@@ -1,0 +1,47 @@
+package lab2;
+import java.util.Scanner;
+
+public class task_10 {
+    public static void main(String[] args) {
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("Enter the number of employees to evaluate: ");
+        int n = myObj.nextInt();
+        int[] sales = new int[n];
+        String[] perf = new String[n];
+
+        for (int i = 0; i < n; i++){
+            System.out.println("Employee " + (i+1) + ":");
+            System.out.println("Enter monthly sales: ");
+            sales[i] = myObj.nextInt();
+            System.out.println("Enter attendance percentage: ");
+            int attendance = myObj.nextInt();
+
+            if(sales[i] > 10000){
+                if(attendance > 90){
+                    perf[i] = "Outstanding";
+                } else if (attendance > 75) {
+                    perf[i] = "Satisfactory";
+                }else {
+                    perf[i] = "Needs improvement";
+                }
+            } else if (sales[i] > 5000) {
+                if (attendance > 80) {
+                    perf[i] = "Satisfactory";
+                }else {
+                    perf[i] = "Needs improvement";
+                }
+            }else {
+                perf[i] = "Needs improvement";
+            }
+            System.out.println("Result: " + perf[i]);
+        }
+        System.out.println("Final Report:");
+        System.out.println("-------------------------------------------------");
+        System.out.println("| Employee Number | Monthly Sales | Performance |");
+        System.out.println("-------------------------------------------------");
+        for (int j = 0; j < n; j++){
+            System.out.println("| " + (j+1) + "              | " + sales[j] + "          | " + perf[j] + "    |");
+        }
+        System.out.println("-------------------------------------------------");
+    }
+}
