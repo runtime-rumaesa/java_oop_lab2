@@ -1,0 +1,40 @@
+package lab2;
+import java.util.Scanner;
+
+public class task_9 {
+    public static void main(String[] args) {
+        Scanner myObj = new Scanner(System.in);
+        char a;
+        do {
+            System.out.println("Enter marks for 5 subjects:");
+            System.out.println("Subject 1: ");
+            int sub1 = myObj.nextInt();
+            System.out.println("Subject 2: ");
+            int sub2 = myObj.nextInt();
+            System.out.println("Subject 3: ");
+            int sub3 = myObj.nextInt();
+            System.out.println("Subject 4: ");
+            int sub4 = myObj.nextInt();
+            System.out.println("Subject 5: ");
+            int sub5 = myObj.nextInt();
+            int total = sub1 + sub2 + sub3 + sub4 + sub5;
+            double perc = total / 5;
+            char grade;
+            if(perc >= 80.00){
+                grade = 'A';
+            } else if (perc >= 70.00) {
+                grade = 'B';
+            } else if (perc >= 60.00) {
+                grade = 'C';
+            }else{
+                grade = 'F';
+            }
+            System.out.println("GRADE REPORT");
+            System.out.println("Total marks: " + total);
+            System.out.println("Percentage: " + perc + "%");
+            System.out.println("Grade: " + grade);
+            System.out.println("Generate another report (y/n): ");
+            a = myObj.next().charAt(0);
+        }while (a == 'y');
+    }
+}
